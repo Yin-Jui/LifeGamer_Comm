@@ -19,6 +19,32 @@ export PATH=$PATH:$GOPATH/bin
 
 ## Compile protobuf
 
+* support category:
+    * event
+
 ```bash
-protoc -I proto/ proto/<spec>.proto --go_out=plugins=grpc:proto
+# compile event's pb
+protoc -I proto/<category> proto/<category>/<spec>.proto --go_out=plugins=grpc:proto-<category>
 ```
+
+## Tool Set
+
+* `src/tools`:
+    * `protoc.exe`: executable protobuf compiler for windows.
+
+
+## Server/Client 
+
+* Server start first:
+```bash
+$ go run src/comm_engine.go
+```
+
+* Then activate client:
+```bash
+$ go run test/dummy_client.go
+```
+
+## Author 
+
+* Kevin Cyu, kevinbird61@gmail.com
