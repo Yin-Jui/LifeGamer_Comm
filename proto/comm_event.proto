@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package comm_event;
+
+service Comm{
+    // send raw 
+    rpc RawData (RawRequest) returns (RawReply) {}
+}
+
+
+// =================== RawData ===================
+message RawRequest {
+    string name = 1;
+}
+
+message RawReply {
+    string data = 1;
+}
+// =================== RawData ===================
